@@ -3,7 +3,8 @@
     <span>Multiline message is:</span>
 <p style="white-space: pre-line;">{{ message }}</p>
 <br>
-<textarea v-model="message" placeholder="add multiple lines"></textarea>
+<textarea v-model="inputfield" placeholder="add multiple lines"></textarea>
+<button v-on:click="show_text">print text</button>
   </div>
 </template>
 
@@ -15,7 +16,13 @@ export default {
   },
   data () {
     return {
+      inputfield: '',
       message: ''
+    }
+  },
+  methods : {
+    show_text: function() {
+      this.message = this.inputfield
     }
   }
 }
